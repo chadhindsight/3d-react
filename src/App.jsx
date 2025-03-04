@@ -14,10 +14,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Canvas dpr={[1,2]} shadows camera={{fov: 45}}>
+    <Canvas dpr={[1,2]} shadows camera={{fov: 45}} className='car-canvas'>
       <color attach="background" args={["#101010"]} />
       <PresentationControls speed={1.5} global zoom={.5} polar={[-0.1, Math.PI / 4]}>
-        
+        <Stage environment={null}>
+          <Model scale={0.01}/>
+        </Stage>
       </PresentationControls>
     </Canvas>
   )
